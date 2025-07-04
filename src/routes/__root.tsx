@@ -1,4 +1,4 @@
-import { SignedIn, SignedOut } from '@clerk/clerk-react'
+import { SignedIn, SignedOut, SignInButton, SignOutButton } from '@clerk/clerk-react'
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 
 export const Route = createRootRoute({
@@ -13,9 +13,11 @@ function RootComponent() {
     <div>
       <SignedOut>
         <div>Please sign in</div>
+        <SignInButton />
       </SignedOut>
       <SignedIn>
         <Outlet />
+        <SignOutButton />
       </SignedIn>
     </div>
   )
